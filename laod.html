@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="images/galaxy.png" type="image/png">
+    <title>CheckX - Waiting</title>
+</head>
+<body>
+    <div class="container2">
+        <div class="left-content">
+            <div class="loader"></div>
+        </div>
+        <div class="right-content">
+            <h1>CheckX</h1>
+            <p id="loading-text">Checking your files...</p>
+        </div>
+    </div>
+    
+    <script>
+        const loadingText = document.getElementById("loading-text");
+        const textArray = ["Checking your files...", "We are still working on it", "And other stuff"];
+        let index = 0;
+
+        function typeText() {
+            const currentText = textArray[index];
+            let charIndex = 0;
+            loadingText.textContent = "";
+
+            function type() {
+                if (charIndex < currentText.length) {
+                    loadingText.textContent += currentText.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, 100); // Typing speed in milliseconds
+                } else {
+                    setTimeout(eraseText, 1000); // Wait for 1 second before erasing
+                }
+            }
+
+            type();
+        }
+
+        function eraseText() {
+            let text = loadingText.textContent;
+
+            function erase() {
+                if (text.length > 0) {
+                    text = text.slice(0, -1);
+                    loadingText.textContent = text;
+                    setTimeout(erase, 50); // Erasing speed in milliseconds
+                } else {
+                    index = (index + 1) % textArray.length;
+                    setTimeout(typeText, 500); // Wait for 0.5 seconds before typing the next text
+                }
+            }
+
+            erase();
+        }
+
+        typeText();
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+:root {
+  --font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #191919;
+  font-family: var(--font-family);
+}
+
+.container {
+  width: 80%;
+  max-width: 800px;
+  background: #292929;
+  border-radius: 12px;
+  display: flex;
+  box-shadow: 0px 0px 60px #7012bd98;
+}
+.container2 {
+    width: 80%;
+    height: 200px;
+    max-width: 800px;
+    background: #292929;
+    border-radius: 12px;
+    display: flex;
+    box-shadow: 0px 0px 60px #7012bd98;
+  }
+.left-content {
+  flex: 1;
+  background-image: url('images/Windows-11-Abstract-Gradient-Purple-Bloom-4K-Wallpaper-1024x576.webp');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px 0 0 12px;
+  display: flex;
+  align-items: center;
+}
+
+.left-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px 0 0 12px;
+}
+
+.right-content {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: var(--font-family);
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-family: var(--font-family);
+}
+
+button.upload-button,
+button.check-button {
+  background: #6b25a5;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button.upload-button:hover,
+button.check-button:hover {
+  background: #7012bd;
+  transform: translateY(-5px);
+}
+/* Additional CSS for the loading animation */
+.loader {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid #7012bd;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
